@@ -1,5 +1,5 @@
 import './valise.css';
-import Vetement from './Vetement' ;
+// import Vetement from './Vetement' ;
 
 
 import React from 'react'
@@ -11,16 +11,16 @@ function Valise() {
   return (
 
 
-    <div className='valiseGlobal'>
+    <div className='bg-sky-500	 rounded-2xl ml-3.5 mr-3.5'>
       <div className='valiseContenair'>
-          <h1 className='valiseTitle'> Ma valise :</h1>
+          <h1 className='text-center'> Ma valise :</h1>
           
          <div className='valiseListe'>
-          <ul>
-             <li> Haut: <vetement />  </li>
-             <li> Bas: <vetement /> </li>
-             <li> Chaussure: <vetement /> </li>
-             <li> Accessoires: <vetement />  </li>
+          <ul className='ml-2'>
+             <li>Haut: <vetement />  </li>
+             <li>Bas: <vetement /> </li>
+             <li>Chaussure: <vetement /> </li>
+             <li>Accessoires: <vetement />  </li>
           </ul>
 
          </div>
