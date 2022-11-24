@@ -1,15 +1,12 @@
 import axios from "axios";
 
-const convertisseur = (city) => {
-  let cityLocation={};
-  axios
+const convertisseur = async (city) => {
+  const { data } = await axios
     .get(`https://nominatim.openstreetmap.org/search.php?city=${city}&format=jsonv2`)
-    .then((res) => res.data[0])
-    .then((data) =>{ 
-      cityLocation = {lat : data.lat, long: data.lon}
-    }     
-    )
-    return cityLocation
+  if(!data.length){
+    return {}
+  }
+  return {lat : data[0].lat , lon: data[0].lon}
 } 
 
 export default convertisseur
