@@ -1,4 +1,5 @@
 import './valise.css';
+import Vetement from './Vetement' ;
 
 
 import React from 'react'
@@ -11,16 +12,15 @@ function Valise() {
 
 
     <div className='valiseGlobal'>
-        
       <div className='valiseContenair'>
           <h1 className='valiseTitle'> Ma valise :</h1>
           
          <div className='valiseListe'>
           <ul>
-             <li> Haut:</li>
-             <li> Bas: </li>
-             <li> Chaussure: </li>
-             <li> Accessoires: </li>
+             <li> Haut: <vetement />  </li>
+             <li> Bas: <vetement /> </li>
+             <li> Chaussure: <vetement /> </li>
+             <li> Accessoires: <vetement />  </li>
           </ul>
 
          </div>
