@@ -1,11 +1,10 @@
-import './valise.css';
-// import Vetement from './Vetement' ;
 
-
+import result from './result';
 import React from 'react'
 
-function Valise() {
 
+function Valise() {
+  
 
 
   return (
@@ -16,11 +15,14 @@ function Valise() {
           <h1 className='text-center'> Ma valise :</h1>
           
          <div className='valiseListe'>
-          <ul className='ml-2'>
-             <li>Haut: <vetement />  </li>
-             <li>Bas: <vetement /> </li>
-             <li>Chaussure: <vetement /> </li>
-             <li>Accessoires: <vetement />  </li>
+          <ul className=' flex  justify-around flex-wrap'>
+            {result.
+            map((item) =>
+            <li>{item.cloting.dress_name} : {item.quantity} <img className=" w-20 h-20 " src={item.cloting.image_url} alt='icon'/>
+            </li>
+
+            )}
+            
           </ul>
 
          </div>
