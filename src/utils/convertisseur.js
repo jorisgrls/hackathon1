@@ -9,4 +9,4 @@ const convertisseur = async (city) => {
   return {lat : data[0].lat , lon: data[0].lon}
 } 
 
-export default convertisseur
+export default convertisseur;
