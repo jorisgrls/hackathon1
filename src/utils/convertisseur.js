@@ -7,9 +7,12 @@ const convertisseur = (city) => {
     .then((res) => res.data[0])
     .then((data) =>{ 
       cityLocation = {lat : data.lat, long: data.lon}
-    }     
-    )
+    })
+    .catch((err) => {
+      console.error(err);
+    cityLocation = {}
+  })
     return cityLocation
 } 
 
-export default convertisseur
+export default convertisseur;
