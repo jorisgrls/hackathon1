@@ -1,52 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import DisplayValise from './DisplayValise';
 import MeteoToday from './MeteoToday';
 import Searchbar from './Searchbar';
 import SelectChoices from './SelectChoices';
+import axios from "axios";
+import ForecastWeather from './ForecastWeather';
 
-const variable = [
-    {
-      quantity: 3,
-      cloting: {
-        id: 1,
-        dress_name: "T-shirt",
-        image_url:
-          "https://res.cloudinary.com/db2sa2bxv/image/upload/v1669290429/tee-shirt_gvormv.png",
-        id_weather_code: [100],
-        temperature: [-30, 50],
-        ratio:7/7
-      },
-    },
-    {
-      quantity: 1,
-      cloting: {
-        id: 6,
-        dress_name: "Pantalon",
-        image_url:
-          "https://res.cloudinary.com/db2sa2bxv/image/upload/v1669290373/pantalon_lre8k7.png",
-        id_weather_code: [
-          0, 1, 2, 3, 45, 48, 51, 53, 55, 56, 57, 61, 63, 65, 66, 67, 71, 73, 75,
-          77, 80, 81, 82, 85, 86, 95, 96, 99,
-        ],
-        temperature: [-50, 25],
-        ratio:7/7
-      },
-    },
-    {
-      quantity: 8,
-      cloting: {
-        id: 14,
-        dress_name: "Sous-vêtements",
-        image_url:
-          "https://res.cloudinary.com/db2sa2bxv/image/upload/v1669294269/underwear3_wpzbcb.png",
-        id_weather_code: [100],
-        temperature: [-50, 50],
-        ratio:7/7
-      },
-    },
-  ];
-
-const SearchSection = ({setDisplaySearchSection, displaySearchSection,setSearchValue, searchValue, onClick, isError, selectedValueDays, setSelectedValueDays, selectedValueDuration, setSelectedValueDuration}) => {
+const SearchSection = ({data, setDisplaySearchSection, displaySearchSection,setSearchValue, searchValue, onClick, isError, selectedValueDays, setSelectedValueDays, selectedValueDuration, setSelectedValueDuration}) => {
     return (
         <section className="flex flex-col gap-4 md:w-10/12 md:m-auto">
             <div className="flex flex-col md:flex-row">
@@ -89,10 +49,11 @@ const SearchSection = ({setDisplaySearchSection, displaySearchSection,setSearchV
              ) : (
              <div className="flex flex-col gap-6 md:flex-row">
                 <div className="w-3/5">
-                    <MeteoToday/>
+                    {/* ici on importe le composant pour la meteo */}
+                    {data && <ForecastWeather data={data} displayNextDays={true}/>}
                 </div>
                 <div className="w-2/5">
-                    <DisplayValise result={variable} />
+                    {/* <DisplayValise result={variable} /> */}
                 </div>
             </div>
              )}

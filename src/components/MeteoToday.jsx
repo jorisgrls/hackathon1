@@ -42,9 +42,9 @@ const MeteoToday = () => {
                     <p className="text-center">Vous n'avez pas autorisé la géolocalisation. Si vous souhaitez voir la météo de votre ville, vous devez activer la géolocalisation dans vos paramètres.</p>
                 </div>
             : 
-                <div className="bg-blue-300 flex justify-center items-center rounded h-[200px] w-100">
+                <div className="flex justify-center items-center rounded w-100">
                     {/* Ajouter ici le composant pour afficher la météo avec en props l'appel de la fonction meteotoday et coords user */}
-                    {data && <ForecastWeather data={data} />}
+                    {data && <ForecastWeather data={data} displayNextDays={false}/>}
                 </div>
             }
         </div>
