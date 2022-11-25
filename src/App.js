@@ -1,4 +1,5 @@
 import './App.css';
+import Valise from './Valise' ;
 import ForecastWeather from './components/ForecastWeather';
 import SearchSection from './components/SearchSection';
 import React, { useEffect, useState } from "react";
@@ -88,6 +89,7 @@ function App() {
     <div className="bg-main bg-no-repeat bg-cover flex items-center justify-center h-100 md:h-screen py-4 bg-blue-800 dark:bg-gray-800">
       <SearchSection setDisplaySearchSection={setDisplaySearchSection} displaySearchSection={displaySearchSection} selectedValueDays={selectedValueDays} setSelectedValueDays={setSelectedValueDays} selectedValueDuration={selectedValueDuration} setSelectedValueDuration={setSelectedValueDuration} isError={coordsNotFound} searchValue={searchValue} setSearchValue={setSearchValue} onClick={handleOnClick}/>
     </div>
+    
   );
 }
 
