@@ -77,7 +77,7 @@ const vetements = [
         dress_name: 'Bottes de neige',
         image_url: "https://res.cloudinary.com/db2sa2bxv/image/upload/v1669290320/botte-de-neige_p2lu6h.png",
         id_weather_code : [0, 45, 48, 71, 73, 75, 77, 85, 86, 96, 99 ],
-        temperature : [-50, 3],
+        temperature : [-50, 5],
         ratio : null
     },
     {
