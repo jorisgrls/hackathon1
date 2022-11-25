@@ -7,7 +7,9 @@ const selectDress = (data) => {
     const j = data.daily.time.length;
     let filtrage = []
     for (let i=0; i<j; i++) {
+        const valise =[]
         
+
         filtrage = v.filter(ve => ve.id_weather_code.includes(n[i]) && t[i].toFixed(0) <= ve.temperatureMax && t[i].toFixed(0) >= ve.temperatureMin)
         
     };
@@ -15,6 +17,7 @@ const cloth = filtrage.map((item) => {
     return ({quantity : (data.daily.time.length*item.ratio ? Math.ceil(data.daily.time.length*item.ratio) : 1),
     clothing :item})
     
+
     });
    
     return cloth

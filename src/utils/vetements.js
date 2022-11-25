@@ -115,7 +115,7 @@ const vetements = [
     {
         id: 15,
         dress_name: 'Écharpe et bonnet',
-        image_url: "https://res.cloudinary.com/db2sa2bxv/image/upload/v1669291143/underwear2_h9aqcy.png",
+        image_url: "https://res.cloudinary.com/db2sa2bxv/image/upload/v1669290468/vetements-dhiver_fngsje.png",
         id_weather_code : [0, 1, 2, 3, 45, 48, 51, 53, 55, 56, 57, 61, 63, 65, 66, 67, 71, 73, 75, 77, 80, 81, 82, 85, 86, 95, 96, 99],
         temperature : [-50, 10],
         ratio : null
@@ -123,7 +123,7 @@ const vetements = [
     {
         id: 16,
         dress_name: 'Tongue',
-        image_url: "https://res.cloudinary.com/db2sa2bxv/image/upload/v1669291143/underwear2_h9aqcy.png",
+        image_url: "https://res.cloudinary.com/db2sa2bxv/image/upload/v1669290439/tongs_jofxd6.png ",
         id_weather_code : [0, 1, 2, 3],
         temperature : [25, 50],
         ratio : null
