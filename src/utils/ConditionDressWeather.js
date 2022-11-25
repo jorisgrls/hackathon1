@@ -33,7 +33,7 @@ const data = {
         "temperature_2m_max": [
             14.3,
             10.9,
-            11.8
+            9
         ],
         "temperature_2m_min": [
             6,
@@ -49,9 +49,10 @@ const vetements = [
         id: 1,
         dress_name: 'T-shirt',
         image_url: "https://res.cloudinary.com/db2sa2bxv/image/upload/v1669290429/tee-shirt_gvormv.png",
-        id_weather_code : [100],
+        id_weather_code : [0, 1, 2, 3, 45, 48, 51,53, 55, 56, 57, 61, 63, 65, 66, 67, 71, 73, 75, 77, 80, 81, 82, 85, 86, 95, 96, 99],
         temperatureMin : -30, 
-        temperatureMax : 50
+        temperatureMax : 50,
+        ratio: 7/7
         
 
     },
@@ -61,7 +62,8 @@ const vetements = [
         image_url: "https://res.cloudinary.com/db2sa2bxv/image/upload/v1669290455/veste-universitaire_bfqeqt.png",
         id_weather_code : [0, 1, 2, 3],
         temperatureMin : 14, 
-        temperatureMax : 22
+        temperatureMax : 22,
+        ratio: 2/7
         
 
     },
@@ -71,8 +73,8 @@ const vetements = [
         image_url: "https://res.cloudinary.com/db2sa2bxv/image/upload/v1669290365/manteau_prpbmw.png",
         id_weather_code : [45, 48, 51, 53, 55, 56, 57, 61, 63, 65, 66, 67, 71, 73, 75, 77, 80, 81, 82, 85, 86, 95, 96, 99  ],
         temperatureMin : -50, 
-        temperatureMax : 13
-        
+        temperatureMax : 13,
+        ratio: null
 
     },
     {
@@ -81,7 +83,9 @@ const vetements = [
         image_url: "https://res.cloudinary.com/db2sa2bxv/image/upload/v1669290401/pull_rthuo5.png",
         id_weather_code : [0, 1, 2, 3, 45, 48, 51, 53, 55, 56, 57, 61, 63, 65, 66, 67, 71, 73, 75, 77, 80, 81, 82, 85, 86, 95, 96, 99],
         temperatureMin : -50, 
-        temperatureMax : 16
+        temperatureMax : 16,
+        ratio: 3/7
+
 
     },
     {
@@ -90,7 +94,9 @@ const vetements = [
         image_url: "https://res.cloudinary.com/db2sa2bxv/image/upload/v1669290347/impermeable_ofw0ak.png",
         id_weather_code : [51, 53, 55, 56, 57, 61, 63, 65, 66, 67, 80, 81, 82],
         temperatureMin : -50, 
-        temperatureMax : 50
+        temperatureMax : 50,
+        ratio: 1/7
+
         
 
     },
@@ -101,7 +107,9 @@ const vetements = [
         image_url: "https://res.cloudinary.com/db2sa2bxv/image/upload/v1669290373/pantalon_lre8k7.png",
         id_weather_code : [0, 1, 2, 3, 45, 48, 51,53, 55, 56, 57, 61, 63, 65, 66, 67, 71, 73, 75, 77, 80, 81, 82, 85, 86, 95, 96, 99],
         temperatureMin : -50, 
-        temperatureMax : 25
+        temperatureMax : 25,
+        ratio: 5/7
+
         
 
     },
@@ -111,7 +119,9 @@ const vetements = [
         image_url: "https://res.cloudinary.com/db2sa2bxv/image/upload/v1669290412/short_mtjhti.png",
         id_weather_code : [0, 1, 2, 3, 51, 53, 61, 80],
         temperatureMin : 26, 
-        temperatureMax : 50
+        temperatureMax : 50,
+        ratio: 7/7
+
         
 
     },
@@ -121,7 +131,9 @@ const vetements = [
         image_url: "https://res.cloudinary.com/db2sa2bxv/image/upload/v1669290337/chaussure-de-course_do9hyg.png",
         id_weather_code : [0, 1, 2, 3, 45, 51, 53, 55, 61, 63, 71, 80, 95, 96],
         temperatureMin : 0, 
-        temperatureMax : 35
+        temperatureMax : 35,
+        ratio: null
+
         
 
     },
@@ -132,7 +144,9 @@ const vetements = [
         image_url: "https://res.cloudinary.com/db2sa2bxv/image/upload/v1669290328/bottes_yodxs4.png",
         id_weather_code : [56, 57, 65, 66, 67, 81, 82, 99 ],
         temperatureMin : 0, 
-        temperatureMax : 35
+        temperatureMax : 35,
+        ratio: null
+
         
 
     },
@@ -142,7 +156,8 @@ const vetements = [
         image_url: "https://res.cloudinary.com/db2sa2bxv/image/upload/v1669290320/botte-de-neige_p2lu6h.png",
         id_weather_code : [0, 45, 48, 71, 73, 75, 77, 85, 86, 96, 99 ],
         temperatureMin : -50, 
-        temperatureMax : 3
+        temperatureMax : 3,
+        ratio: null
         
 
     },
@@ -152,7 +167,9 @@ const vetements = [
         image_url: "https://res.cloudinary.com/db2sa2bxv/image/upload/v1669290356/maillots-de-bain_nxxitn.png",
         id_weather_code : [0, 1, 2, 3],
         temperatureMin : 25, 
-        temperatureMax : 50
+        temperatureMax : 50,
+        ratio: null
+
         
 
     },
@@ -162,7 +179,9 @@ const vetements = [
         image_url: "https://res.cloudinary.com/db2sa2bxv/image/upload/v1669290390/parapluie_euffzv.png",
         id_weather_code : [51, 53, 55, 56, 57, 51, 63, 65, 66, 67, 80, 81, 82, 95],
         temperatureMin : -50, 
-        temperatureMax : 50
+        temperatureMax : 50,
+        ratio: null
+
         
 
     },
@@ -172,7 +191,9 @@ const vetements = [
         image_url: "https://res.cloudinary.com/db2sa2bxv/image/upload/v1669290308/accessoires_rw9xke.png",
         id_weather_code : [0, 1, 2],
         temperatureMin : 25, 
-        temperatureMax : 50
+        temperatureMax : 50,
+        ratio: null
+
         
 
     },
@@ -180,9 +201,11 @@ const vetements = [
         id: 14,
         dress_name: 'Sous-vêtements',
         image_url: "https://res.cloudinary.com/db2sa2bxv/image/upload/v1669294269/underwear3_wpzbcb.png",
-        id_weather_code : [100],
+        id_weather_code : [0, 1, 2, 3, 45, 48, 51,53, 55, 56, 57, 61, 63, 65, 66, 67, 71, 73, 75, 77, 80, 81, 82, 85, 86, 95, 96, 99],
         temperatureMin : -50, 
-        temperatureMax : 50
+        temperatureMax : 50,
+        ratio: 7/7
+
         
 
     },
@@ -192,7 +215,9 @@ const vetements = [
         image_url: "https://res.cloudinary.com/db2sa2bxv/image/upload/v1669291143/underwear2_h9aqcy.png",
         id_weather_code : [0, 1, 2, 3, 45, 48, 51, 53, 55, 56, 57, 61, 63, 65, 66, 67, 71, 73, 75, 77, 80, 81, 82, 85, 86, 95, 96, 99],
         temperatureMin : -50, 
-        temperatureMax : 10
+        temperatureMax : 10,
+        ratio: null
+
         
 
     },
@@ -202,7 +227,9 @@ const vetements = [
         image_url: "https://res.cloudinary.com/db2sa2bxv/image/upload/v1669291143/underwear2_h9aqcy.png",
         id_weather_code : [0, 1, 2, 3],
         temperatureMin : 25, 
-        temperatureMax : 50
+        temperatureMax : 50,
+        ratio: null
+
         
 
     }
@@ -215,30 +242,26 @@ const vetements = [
 
 
 const a = () => {
-    const valise = [];
     const v = vetements
     const t = data.daily.temperature_2m_max;
     const n = data.daily.weathercode;
     const j = data.daily.time.length;
+    let filtrage = []
     for (let i=0; i<j; i++) {
         
-        const filtrage = v.filter(ve => ve.id_weather_code.includes(n[i]) && t[i].toFixed(0) <= ve.temperatureMax && t[i].toFixed(0) >= ve.temperatureMin)
-        valise.push(filtrage, (v[0] * data.daily.time[i]), (v[13] * data.daily.time[i]))
-
-        return(valise)
-
+        filtrage = v.filter(ve => ve.id_weather_code.includes(n[i]) && t[i].toFixed(0) <= ve.temperatureMax && t[i].toFixed(0) >= ve.temperatureMin)
         
     };
-
-    
-};
+const cloth = filtrage.map((item) => {
+    return ({quantity : (data.daily.time.length*item.ratio ? Math.ceil(data.daily.time.length*item.ratio) : "1"),
+    clothing :item})
+    });
+}
 
 
 
 
 a();
-
-console.log(a())
 
 
 
