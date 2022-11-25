@@ -221,12 +221,14 @@ const a = () => {
     const n = data.daily.weathercode;
     const j = data.daily.time.length;
     for (let i=0; i<j; i++) {
+        const valise =[]
         
         const filtrage = v.filter(ve => ve.id_weather_code.includes(n[i]) && t[i].toFixed(0) <= ve.temperatureMax && t[i].toFixed(0) >= ve.temperatureMin)
-        valise.push(filtrage, (v[0] * data.daily.time[i]), (v[13] * data.daily.time[i]))
-
+        valise.push(filtrage)
+        
+        console.log(valise)
         return(valise)
-
+        
         
     };
 
@@ -238,7 +240,7 @@ const a = () => {
 
 a();
 
-console.log(a())
+// console.log(a())
 
 
 
