@@ -27,13 +27,14 @@ const Searchbar = ({setSearchValue, searchValue, isError}) => {
         <input
           type="text"
           id="simple-search"
-          className={`bg-gray-50 border-2 text-gray-900 text-sm rounded-lg block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white focus:outline-none ${isError ? "border-red-900" : "border-gray-300"}`}
+          className={`bg-gray-50 border-2 text-gray-900 text-sm rounded-lg block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white focus:outline-none ${isError ? "border-red-500" : "border-gray-300"}`}
           autoComplete="off"
           value={searchValue}
           onChange={(event)=>setSearchValue(event.target.value)}
+          placeholder="Search your destination"
         />
       </div>
-      {isError && <p className="text-red-900 text-sm font-semibold">City not found</p>}
+      {isError && <p className="text-red-500 text-sm font-semibold">City not found</p>}
     </div>
     );
 };
