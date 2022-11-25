@@ -2,17 +2,21 @@ import React from 'react'
 
 function DisplayValise({result}) {
   return (
-    <div className='bg-sky-500	 rounded-2xl'>
-      <div className='valiseContenair'>
-          <h1 className='text-center'> Ma valise :</h1>
-          <div className='valiseListe'>
-          <ul className=' flex  justify-around flex-wrap'>
+    <>
+      <div className='flex justify-center'>
+        <img className='' src='https://res.cloudinary.com/db2sa2bxv/image/upload/v1669378720/Sans_titre-1_rc0ccg.png' alt=''/>
+        </div>
+      
+
+      <div className='valiseContenair mt-9'>
+          <ul className='flex justify-around flex-wrap text-[#fff] font-semibold text-center'>
             {result.map((item) =><li>{item.cloting.dress_name} : {item.quantity} <img className=" w-20 h-20 " src={item.cloting.image_url} alt='icon'/></li>)}
           </ul>
-         </div>
       </div>
 
-    </div>
+     
+
+    </>
 
   )
 }
