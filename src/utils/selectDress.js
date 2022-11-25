@@ -1,7 +1,6 @@
+import vetements from "./vetements";
 
-
-
-const selectDress = (data, vetements) => {
+const selectDress = (data) => {
     const v = vetements
     const t = data.daily.temperature_2m_max;
     const n = data.daily.weathercode;
