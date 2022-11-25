@@ -15,7 +15,7 @@ const ForecastWeather = ({ data, displayNextDays }) => {
     ]
 
     return (
-        <div className='w-full h-fit bg-cyan-800 opacity-70 rounded-xl py-4 px-6 flex flex-col items-center text-slate-300 font-thin'>
+        <div className='w-full h-fit bg-gray-800 bg-opacity-30 border border-white border-opacity-70 rounded-xl py-4 px-6 flex flex-col items-center text-slate-300 font-thin'>
             <div className='w-full h-fit flex justify-around border-slate-300'>
                 <div className='h-full'>
                     <h2 className='text-xl'>Maintenant</h2>
