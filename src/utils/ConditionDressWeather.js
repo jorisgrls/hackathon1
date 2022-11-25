@@ -21,6 +21,8 @@ const cloth = filtrage.map((item) => {
     return cloth
 }
 
+console.log (selectDress)
+
 export default selectDress 
 
 

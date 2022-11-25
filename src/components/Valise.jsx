@@ -1,9 +1,9 @@
 
-import result from './result';
 import React from 'react'
+import ConditionDressWeather from '../utils/ConditionDressWeather';
 
 
-function Valise() {
+function Valise( {cloth} ) {
   
   return (
 
@@ -14,7 +14,7 @@ function Valise() {
           
          <div className='valiseListe'>
           <ul className=' flex  justify-around flex-wrap'>
-            {result.
+            {cloth.
             map((item) =>
             <li>{item.cloting.dress_name} : {item.quantity} <img className=" w-20 h-20 " src={item.cloting.image_url} alt='icon'/>
             </li>

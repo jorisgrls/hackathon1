@@ -1,5 +1,5 @@
 import './App.css';
-import Valise from './Valise' ;
+import Valise from './components/Valise' ;
 import SearchSection from './components/SearchSection';
 import React, { useEffect, useState } from "react";
 import convertisseur from "./utils/convertisseur";
