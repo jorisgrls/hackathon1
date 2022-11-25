@@ -4,7 +4,6 @@ import MeteoToday from './MeteoToday';
 import Searchbar from './Searchbar';
 import SelectChoices from './SelectChoices';
 import ForecastWeather from './ForecastWeather';
-import selectDress from "../utils/selectDress"
 import axios from "axios";
 import convertisseur from '../utils/convertisseur';
 import dateRetour from '../utils/dateRetour';
@@ -30,7 +29,7 @@ const SearchSection = ({setDisplaySearchSection, displaySearchSection,setSearchV
             <div className="flex flex-col md:flex-row">
                 <div className="py-4 mt-12 md:mt-0 w-full px-4 md:p-0 md:w-7/12 text-white flex flex-col items-center md:items-start gap-4">
                     <div className="flex gap-2 items-center font-semibold text-4xl">
-                        <h1>Welcome on Valease</h1>
+                        <h1 class>Welcome on <span className="text-[#b6fBFF]">Val<span className="italic text-yellow-200" ><span className="text-yellow-500">E</span>ase</span></span></h1>
                         <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 21v-4m0 0V5a2 2 0 012-2h6.5l1 1H21l-3 6 3 6h-8.5l-1-1H5a2 2 0 00-2 2zm9-13.5V9"></path></svg>
                     </div>
                     <p className="text-center md:text-left">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab magnam inventore ea, consequatur eum, amet incidunt impedit magni aspernatur necessitatibus provident odio id, debitis corrupti hic optio perferendis vero accusantium!</p>
