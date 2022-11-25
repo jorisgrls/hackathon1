@@ -1,12 +1,30 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import DisplayValise from './DisplayValise';
 import MeteoToday from './MeteoToday';
 import Searchbar from './Searchbar';
 import SelectChoices from './SelectChoices';
-import axios from "axios";
 import ForecastWeather from './ForecastWeather';
+import selectDress from "../utils/selectDress"
+import axios from "axios";
+import convertisseur from '../utils/convertisseur';
+import dateRetour from '../utils/dateRetour';
+import dateDepart from '../utils/dateDepart';
+import test from '../utils/test';
 
-const SearchSection = ({data, setDisplaySearchSection, displaySearchSection,setSearchValue, searchValue, onClick, isError, selectedValueDays, setSelectedValueDays, selectedValueDuration, setSelectedValueDuration}) => {
+const SearchSection = ({setDisplaySearchSection, displaySearchSection,setSearchValue, searchValue, onClick, isError, selectedValueDays, setSelectedValueDays, selectedValueDuration, setSelectedValueDuration}) => {
+    const [data,setData] = useState();
+    const handleOnClick = () => {
+        console.log(`start_date=${dateDepart(selectedValueDays)}&end_date=${dateRetour(selectedValueDays,selectedValueDuration)}`);
+        const fetchData = async () => {
+            const convert = await convertisseur(searchValue)
+            const depart = dateDepart(selectedValueDays);
+            const retour = dateRetour(selectedValueDays,selectedValueDuration);
+            const response = await axios.get(`https://api.open-meteo.com/v1/forecast?latitude=${convert.lat}&longitude=${convert.lon}&daily=weathercode,temperature_2m_max,temperature_2m_min&current_weather=true&timezone=auto${selectedValueDays && selectedValueDuration ? `&start_date=${depart}&end_date=${retour}` : ""}`)
+            setData(response.data);   
+        }
+        fetchData();
+        onClick()
+    }
     return (
         <section className="flex flex-col gap-4 md:w-10/12 md:m-auto">
             <div className="flex flex-col md:flex-row">
@@ -40,7 +58,7 @@ const SearchSection = ({data, setDisplaySearchSection, displaySearchSection,setS
                                 <SelectChoices selectedValueDays={selectedValueDays} setSelectedValueDays={setSelectedValueDays} selectedValueDuration={selectedValueDuration} setSelectedValueDuration={setSelectedValueDuration}/>
                             </div>
                         </div>
-                        <button onClick={onClick} type="button" className="w-full text-white bg-blue-400 dark:bg-gray-800 hover:bg-blue-400/90 dark:hover:bg-gray-800/90 focus:ring-4 focus:outline-none dark:focus:ring-gray-800/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center justify-center mr-2 mb-2">
+                        <button onClick={handleOnClick} type="button" className="w-full text-white bg-blue-400 dark:bg-gray-800 hover:bg-blue-400/90 dark:hover:bg-gray-800/90 focus:ring-4 focus:outline-none dark:focus:ring-gray-800/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center justify-center mr-2 mb-2">
                             VALIDER
                             <svg className="w-6 h-6 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
                         </button>
@@ -53,7 +71,7 @@ const SearchSection = ({data, setDisplaySearchSection, displaySearchSection,setS
                     {data && <ForecastWeather data={data} displayNextDays={true}/>}
                 </div>
                 <div className="w-2/5">
-                    {/* <DisplayValise result={variable} /> */}
+                    {data && <DisplayValise result={test(data,selectedValueDuration)} />}
                 </div>
             </div>
              )}

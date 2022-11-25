@@ -27,14 +27,13 @@ const MeteoToday = () => {
                 }
             }
             catch(error) {
-                console.log(error.message)
+                console.error(error.message)
             }
             
         }
         fetchData();
         
     },[coordsUser])
-    console.log(response);
     return (
         <div>
             {isError ? 

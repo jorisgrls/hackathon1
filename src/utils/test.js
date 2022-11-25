@@ -1,5 +1,9 @@
 import vetements from "./vetements.js";
 
+const isInRange = (min, max, value) => {
+    return value>=min && value<=max;
+}
+
 const isClothingInArray = (clothingId, clothingList) => clothingList.find(clothing => clothing.id === clothingId) !== undefined
 
 const getClothings = (data, nbDays) => {
@@ -17,4 +21,6 @@ const getClothings = (data, nbDays) => {
   }))
 }
 
-export default getClothings;
+export default getClothings
+
+// [{quantity:3,clothing:{}}]
