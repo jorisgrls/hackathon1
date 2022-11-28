@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import ForecastWeather from './ForecastWeather';
@@ -6,6 +7,7 @@ const MeteoToday = () => {
     const [coordsUser, setCoordsUser] = useState(null);
     const [isError, setIsError] = useState(true);
     const [data, setData] = useState();
+    let response;
     const success = ({coords}) => {
         setIsError(false);
         setCoordsUser({lat:coords.latitude,lon:coords.longitude});
