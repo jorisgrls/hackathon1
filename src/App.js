@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import './App.css';
 import SearchSection from './components/SearchSection';
 import React, { useState, useEffect, useMemo } from "react";
