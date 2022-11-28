@@ -1,10 +1,7 @@
 import './App.css';
-import Valise from './Valise' ;
-import ForecastWeather from './components/ForecastWeather';
 import SearchSection from './components/SearchSection';
 import React, { useState, useEffect, useMemo } from "react";
 import convertisseur from "./utils/convertisseur";
-import fetchMeteo from './utils/fetchMeteo';
 
 
 
