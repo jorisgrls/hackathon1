@@ -6,7 +6,6 @@ const MeteoToday = () => {
     const [coordsUser, setCoordsUser] = useState(null);
     const [isError, setIsError] = useState(true);
     const [data, setData] = useState();
-    let response;
     const success = ({coords}) => {
         setIsError(false);
         setCoordsUser({lat:coords.latitude,lon:coords.longitude});
