@@ -18,7 +18,7 @@ function ForecastWeather({
     'Sam',
   ];
   return (
-    <div className={`w-full h-fit bg-gray-800 gap-4 bg-opacity-30 backdrop-blur-lg py-4 px-6 flex flex-col items-center ${isMeteoToday ? 'rounded-l' : 'rounded-lg'} text-slate-300`}>
+    <div className={`w-full h-fit bg-gray-800 gap-4 bg-opacity-30 backdrop-blur-lg py-4 px-6 flex flex-col items-center ${isMeteoToday ? 'md:rounded-l' : 'md:rounded-lg'} text-slate-300`}>
       <div className="w-full h-fit flex justify-around border-slate-300">
         <div className="flex flex-col md:flex-row items-center gap-4 mb-6 md:mb-0 py-4 md:py-0">
           <div className="flex flex-col">

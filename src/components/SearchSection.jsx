@@ -36,10 +36,10 @@ function SearchSection({
         <div className="flex flex-col md:flex-row">
           <div className="py-4 w-full px-4 md:p-0 md:w-8/12 text-white flex flex-col items-center md:items-start gap-4">
             <div className="flex gap-2 items-center font-semibold text-5xl">
-              <h1>
-                <span className="hidden md:inline">Faire ta </span>
+              <h1 className="font-bold">
+                <span className="hidden md:inline font-medium">Faire ta </span>
                 Valease
-                <span className="hidden md:inline"> n&apos;a jamais été aussi simple</span>
+                <span className="hidden md:inline font-medium"> n&apos;a jamais été aussi simple</span>
               </h1>
             </div>
             <p className="text-lg text-center md:text-left">
@@ -53,7 +53,7 @@ function SearchSection({
         </div>
       )}
       {displaySearchSection ? (
-        <div className="bg-gray-800 bg-opacity-30 rounded flex flex-col-reverse gap-2 items-center md:gap-8 md:flex-row w-11/12 md:w-full mx-auto md:mx-0">
+        <div className="bg-gray-800 bg-opacity-30 rounded flex flex-col-reverse gap-2 items-center md:gap-8 md:flex-row w-full mx-auto md:mx-0">
           <div className="w-full md:w-8/12 h-full">
             <MeteoToday />
           </div>
@@ -81,8 +81,8 @@ function SearchSection({
         </div>
       ) : (
         <div className="flex flex-col gap-6 md:flex-row items-center">
-          <div className="w-full px-2 md:3/12 md:px-0 flex flex-col gap-4">
-            <div className="flex items-center gap-2 cursor-pointer" onClick={setDisplaySearchSection}>
+          <div className="w-full md:3/12 md:px-0 flex flex-col gap-4">
+            <div className="flex items-center px-2 md:px-0 gap-2 cursor-pointer" onClick={setDisplaySearchSection}>
               <button type="button" className="text-color-main border-color-main border-2 hover:bg-color-main hover:text-black font-medium rounded-full text-xl p-1 text-center inline-flex items-center">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor" className="w-6 h-6 font-extrabold">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 12h-15m0 0l6.75 6.75M4.5 12l6.75-6.75" />
