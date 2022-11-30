@@ -1,13 +1,18 @@
-import React from 'react';
+import React, { useRef } from 'react';
+import PropTypes from 'prop-types';
+import useOnClickOutside from '../hooks/useOnClickOutside';
 
-const Searchbar = ({setSearchValue, searchValue, isError}) => {
-    return (
-        <div
-        className="flex flex-col w-full py-3"
-        >
-      <label htmlFor="simple-search" className="sr-only">
-        Search
-      </label>
+function Searchbar({
+  setSearchValue, searchValue, isError, setCoordsNotFound,
+}) {
+  const refSearch = useRef();
+  useOnClickOutside(refSearch, () => setCoordsNotFound(false));
+  return (
+    <div
+      className="flex flex-col w-full py-3"
+      ref={refSearch}
+      onFocus={() => setCoordsNotFound(false)}
+    >
       <div className="relative w-full">
         <div className="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
           <svg
@@ -27,16 +32,31 @@ const Searchbar = ({setSearchValue, searchValue, isError}) => {
         <input
           type="text"
           id="simple-search"
-          className={`bg-gray-50 border-2 text-gray-900 text-sm rounded-lg block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white focus:outline-none ${isError ? "border-red-500" : "border-gray-300"}`}
+          className={`bg-gray-50 border-2 text-gray-900 text-sm rounded-lg block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white focus:outline-none ${isError ? 'border-red-500' : 'border-gray-300'}`}
           autoComplete="off"
           value={searchValue}
-          onChange={(event)=>setSearchValue(event.target.value)}
+          onChange={(event) => setSearchValue(event.target.value)}
           placeholder="Search your destination"
         />
       </div>
       {isError && <p className="text-red-500 text-sm font-semibold">City not found</p>}
     </div>
-    );
+  );
+}
+
+Searchbar.propTypes = {
+  setSearchValue: PropTypes.func,
+  searchValue: PropTypes.string,
+  isError: PropTypes.bool,
+  setCoordsNotFound: PropTypes.func,
+
+};
+
+Searchbar.defaultProps = {
+  setSearchValue: () => {},
+  searchValue: '',
+  isError: false,
+  setCoordsNotFound: () => {},
 };
 
 export default Searchbar;

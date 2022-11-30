@@ -1,55 +1,103 @@
+/* eslint-disable max-len */
+/* eslint-disable array-callback-return */
 import React from 'react';
-import weathericons from '../utils/weathericons.js';
+import PropTypes from 'prop-types';
+import resetCityString from '../utils/resetCityString';
+import weathericons from '../utils/weathericons';
 
+function ForecastWeather({
+  searchValue, data, displayNextDays, limit,
+}) {
+  const days = [
+    'Dim',
+    'Lun',
+    'Mar',
+    'Mer',
+    'Jeu',
+    'Ven',
+    'Sam',
+  ];
+  return (
+    <div className="w-full h-fit bg-gray-800 gap-4 bg-opacity-30 backdrop-blur-lg py-4 px-6 flex flex-col items-center rounded-l text-slate-300">
+      <div className="w-full h-fit flex justify-around border-slate-300">
+        <div className="flex flex-col md:flex-row items-center gap-4 mb-6 md:mb-0 py-4 md:py-0">
+          <div className="flex flex-col">
+            <h2 className="text-xl">
+              Aujourd&apos;hui
+              {searchValue ? ` à ${resetCityString(searchValue)}` : ' chez vous'}
+            </h2>
+          </div>
+          <div className="flex items-center">
+            <div className="flex items-center">
+              <img
+                className=" h-28 w-28"
+                src={weathericons.filter((e) => e.id_weathercode.includes(data.current_weather.weathercode))[0].icon_url}
+                alt="icon"
+              />
 
-const ForecastWeather = ({ data, displayNextDays }) => {
-
-    const days = [
-        'Dim',
-        'Lun',
-        'Mar',
-        'Mer',
-        'Jeu',
-        'Ven',
-        'Sam'
-    ]
-
-    return (
-        <div className='w-full h-fit bg-gray-800 bg-opacity-30 border border-white border-opacity-70 rounded-xl py-4 px-6 flex flex-col items-center text-slate-300 font-thin'>
-            <div className='w-full h-fit flex justify-around border-slate-300'>
-                <div className='h-full'>
-                    <h2 className='text-xl'>Maintenant</h2>
-                    <p className='text-sm'>{new Date(data.current_weather.time).toLocaleDateString()}</p>
-                    <div className='h-28 pl-8'>
-                        <img className='h-full w-auto' src={
-                            weathericons.filter((e) => e.id_weathercode.includes(data.current_weather.weathercode))[0].icon_url
-                        } alt="" /></div>
-                </div>
-                <div className='flex items-center'>
-                    <p className='text-5xl'>{Math.round(data.current_weather.temperature)}°C</p>
-                    {/* <p>Vent : {data.current_weather.windspeed} km/h</p> */}
-                </div>
             </div>
-            {displayNextDays && (
-                <div className='w-full border-top h-1/3'>
-                    <ul className='flex w-full flex-wrap justify-center'>
-                        {
-                            data.daily.time.map((elem, index) => (
-                                <li key={index} className='m-4 h-24 w-14 text-center'>
-                                    <p>{days[new Date(elem).getDay()]}</p>
-                                    <div classname='h-3 w-3'><img classname='h-full w-auto' src={
-                                        weathericons.filter((icon) => icon.id_weathercode.includes(data.daily.weathercode[index]))[0].icon_url
-                                    } alt="" /></div>
-                                    <p className='text-sm'>{Math.round(data.daily.temperature_2m_min[index])}° / {Math.round(data.daily.temperature_2m_max[index])}°</p>
-
-                                </li>
-                            ))
-                        }
-                    </ul>
-                </div>
-            )}
+            <p className="text-5xl font-medium">
+              {Math.round(data.current_weather.temperature)}
+              °C
+            </p>
+          </div>
         </div>
-    );
+      </div>
+      {displayNextDays && (
+        <div className="w-full">
+          <ul className="flex w-full flex-wrap gap-8 justify-center">
+            {
+                            data.daily.time.map((elem, index) => index < limit
+                                    && (
+                                    <li key={`day_${elem}`} className="flex flex-col text-center">
+                                      <p>
+                                        {days[new Date(elem).getDay()]}
+                                        {' '}
+                                        {elem[8]}
+                                        {elem[9]}
+                                        /
+                                        {elem[5]}
+                                        {elem[6]}
+                                      </p>
+                                      <div className="h-20 w-20">
+                                        <img
+                                          className="h-full w-full"
+                                          src={
+                                            weathericons.filter((icon) => icon.id_weathercode.includes(data.daily.weathercode[index]))[0].icon_url
+                                        }
+                                          alt=""
+                                        />
+                                      </div>
+                                      <p className="text-sm">
+                                        {Math.round(data.daily.temperature_2m_min[index])}
+                                        ° /
+                                        {' '}
+                                        {Math.round(data.daily.temperature_2m_max[index])}
+                                        °
+                                      </p>
+                                    </li>
+                                    ))
+                        }
+          </ul>
+        </div>
+      )}
+    </div>
+  );
+}
+
+ForecastWeather.propTypes = {
+  searchValue: PropTypes.string,
+  data: PropTypes.shape,
+  displayNextDays: PropTypes.bool,
+  limit: PropTypes.number,
+
+};
+
+ForecastWeather.defaultProps = {
+  searchValue: '',
+  data: {},
+  displayNextDays: true,
+  limit: 7,
 };
 
 export default ForecastWeather;
