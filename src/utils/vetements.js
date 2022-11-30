@@ -124,7 +124,7 @@ const vetements = [
   {
     id: 16,
     dress_name: 'Tongue',
-    image_url: 'https://res.cloudinary.com/db2sa2bxv/image/upload/v1669290439/tongs_jofxd6.png ',
+    image_url: 'https://res.cloudinary.com/db2sa2bxv/image/upload/v1669290439/tongs_jofxd6.png',
     id_weather_code: [0, 1, 2, 3],
     temperature: [25, 50],
     ratio: null,
