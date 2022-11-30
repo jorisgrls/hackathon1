@@ -9,8 +9,8 @@ module.exports = {
         main: "url('/src/assets/main.svg')",
       },
       colors: {
-        'light-main': '#312E81',
-        'light-button': '#A78BFA',
+        'light-main': '#0284C7',
+        'light-button': '#7DD3FC',
         'color-main': '#FFFFFF',
       },
     },
