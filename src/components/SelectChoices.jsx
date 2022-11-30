@@ -10,7 +10,7 @@ function SelectChoices({
     <div className="flex gap-2 w-full">
       <div className="w-1/2">
         <label htmlFor="begining" className="block mb-2 font-medium text-white">Je pars dans ...</label>
-        <select value={selectedValueDays} onChange={(event) => setSelectedValueDays(event.target.value)} id="begining" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-l block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white">
+        <select value={selectedValueDays} onChange={(event) => setSelectedValueDays(event.target.value)} id="begining" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white">
           {[...Array(Math.abs(selectedValueDuration - 7))].map((element, index) => (
             <option key={index} value={index + 1}>
               {index + 1}

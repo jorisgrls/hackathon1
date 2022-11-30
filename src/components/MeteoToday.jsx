@@ -40,8 +40,8 @@ function MeteoToday() {
           </div>
         )
         : (
-          <div className="flex justify-center items-center rounded-l w-100">
-            {data && <ForecastWeather data={data} displayNextDays limit={4} />}
+          <div className="flex justify-center items-center w-100">
+            {data && <ForecastWeather data={data} displayNextDays limit={4} isMeteoToday />}
           </div>
         )}
     </div>

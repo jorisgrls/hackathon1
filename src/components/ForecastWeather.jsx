@@ -6,7 +6,7 @@ import resetCityString from '../utils/resetCityString';
 import weathericons from '../utils/weathericons';
 
 function ForecastWeather({
-  searchValue, data, displayNextDays, limit,
+  searchValue, data, displayNextDays, limit, isMeteoToday,
 }) {
   const days = [
     'Dim',
@@ -18,7 +18,7 @@ function ForecastWeather({
     'Sam',
   ];
   return (
-    <div className="w-full h-fit bg-gray-800 gap-4 bg-opacity-30 backdrop-blur-lg py-4 px-6 flex flex-col items-center rounded-l text-slate-300">
+    <div className={`w-full h-fit bg-gray-800 gap-4 bg-opacity-30 backdrop-blur-lg py-4 px-6 flex flex-col items-center ${isMeteoToday ? 'rounded-l' : 'rounded-lg'} text-slate-300`}>
       <div className="w-full h-fit flex justify-around border-slate-300">
         <div className="flex flex-col md:flex-row items-center gap-4 mb-6 md:mb-0 py-4 md:py-0">
           <div className="flex flex-col">
@@ -90,6 +90,7 @@ ForecastWeather.propTypes = {
   data: PropTypes.shape,
   displayNextDays: PropTypes.bool,
   limit: PropTypes.number,
+  isMeteoToday: PropTypes.bool,
 
 };
 
@@ -98,6 +99,7 @@ ForecastWeather.defaultProps = {
   data: {},
   displayNextDays: true,
   limit: 7,
+  isMeteoToday: false,
 };
 
 export default ForecastWeather;

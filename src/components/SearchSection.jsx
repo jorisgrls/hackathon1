@@ -31,14 +31,15 @@ function SearchSection({
     onClick();
   };
   return (
-    <section className="flex flex-col justify-center gap-4 md:w-10/12 md:m-auto">
+    <section className="flex flex-col justify-center gap-4 md:w-9/12 md:m-auto">
       {displaySearchSection && (
         <div className="flex flex-col md:flex-row">
           <div className="py-4 w-full px-4 md:p-0 md:w-8/12 text-white flex flex-col items-center md:items-start gap-4">
             <div className="flex gap-2 items-center font-semibold text-5xl">
               <h1>
-                <span className="hidden md:inline">Faire ta valise n&apos;a jamais été aussi simple avec </span>
+                <span className="hidden md:inline">Faire ta </span>
                 Valease
+                <span className="hidden md:inline"> n&apos;a jamais été aussi simple</span>
               </h1>
             </div>
             <p className="text-lg text-center md:text-left">
@@ -89,7 +90,7 @@ function SearchSection({
               </button>
               <p className="font-medium text-color-main">Modifier ma recherche</p>
             </div>
-            {data && <ForecastWeather searchValue={searchValue} data={data} displayNextDays limit={7} />}
+            {data && <ForecastWeather searchValue={searchValue} data={data} displayNextDays limit={7} isMeteoToday={false} />}
           </div>
           <div className="px-2 w-full md:w-9/12 md:px-0">
             {data && <DisplayValise result={getClothings(data, selectedValueDuration)} />}
