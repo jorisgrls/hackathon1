@@ -10,7 +10,7 @@ function DisplayValise({ result }) {
       <div className="valiseContenair mt-9">
         <ul className="flex justify-around gap-4 flex-wrap text-[#fff] font-semibold text-center">
           {result.map((item) => (
-            <li className="flex items-center gap-2">
+            <li key={item.clothing.id} className="flex items-center gap-2">
               {item.quantity}
               x
               {' '}

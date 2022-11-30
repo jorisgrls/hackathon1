@@ -110,9 +110,9 @@ SearchSection.propTypes = {
   searchValue: PropTypes.string,
   onClick: PropTypes.func,
   isError: PropTypes.bool,
-  selectedValueDays: PropTypes.string,
+  selectedValueDays: PropTypes.number,
   setSelectedValueDays: PropTypes.func,
-  selectedValueDuration: PropTypes.string,
+  selectedValueDuration: PropTypes.number,
   setSelectedValueDuration: PropTypes.func,
 
 };
@@ -124,12 +124,12 @@ SearchSection.defaultProps = {
   setCoordsNotFound: () => {},
   displaySearchSection: false,
   setSearchValue: () => {},
-  searchValue: '',
+  searchValue: 1,
   onClick: () => {},
   isError: false,
   selectedValueDays: '',
   setSelectedValueDays: () => {},
-  selectedValueDuration: '',
+  selectedValueDuration: 1,
   setSelectedValueDuration: () => {},
 };
 

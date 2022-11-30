@@ -1,3 +1,4 @@
+/* eslint-disable react/no-array-index-key */
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import React from 'react';
 import PropTypes from 'prop-types';
@@ -11,7 +12,7 @@ function SelectChoices({
         <label htmlFor="begining" className="block mb-2 font-medium text-white">Je pars dans ...</label>
         <select value={selectedValueDays} onChange={(event) => setSelectedValueDays(event.target.value)} id="begining" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
           {[...Array(Math.abs(selectedValueDuration - 7))].map((element, index) => (
-            <option value={index + 1}>
+            <option key={index} value={index + 1}>
               {index + 1}
               {' '}
               {index + 1 > 1 ? 'jours' : 'jour'}
@@ -23,7 +24,7 @@ function SelectChoices({
         <label htmlFor="duration" className="block mb-2 font-medium text-white">Durée du voyage</label>
         <select value={selectedValueDuration} onChange={(event) => setSelectedValueDuration(event.target.value)} id="duration" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
           {[...Array(Math.abs(selectedValueDays - 7))].map((element, index) => (
-            <option value={index + 1}>
+            <option key={index} value={index + 1}>
               {index + 1}
               {' '}
               {index + 1 > 1 ? 'jours' : 'jour'}
@@ -36,16 +37,16 @@ function SelectChoices({
 }
 
 SelectChoices.propTypes = {
-  selectedValueDays: PropTypes.string,
+  selectedValueDays: PropTypes.number,
   setSelectedValueDays: PropTypes.func,
-  selectedValueDuration: PropTypes.string,
+  selectedValueDuration: PropTypes.number,
   setSelectedValueDuration: PropTypes.func,
 };
 
 SelectChoices.defaultProps = {
-  selectedValueDays: '',
+  selectedValueDays: 1,
   setSelectedValueDays: () => {},
-  selectedValueDuration: '',
+  selectedValueDuration: 1,
   setSelectedValueDuration: () => {},
 };
 
