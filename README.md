@@ -22,3 +22,4 @@ npm run start
 ```
 
 <img src="https://www.zupimages.net/up/22/48/h94i.png" alt="Image of the homepage">
+<img src="https://www.zupimages.net/up/22/48/u0zu.png" alt="Image of the result page">
